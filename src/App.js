@@ -1,13 +1,29 @@
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './css/App.css';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './components/Navigation';
+import HomePage from './pages/HomePage';
+import TopList from './pages/TopList';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Dev branch created</h1>
-      <Button variant='danger'>Bootstrap</Button>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navigation />
+        <div className='App'>
+          <Switch>
+            <Route exact path='/'>
+              <HomePage />
+            </Route>
+
+            <Route exact path='/TopList'>
+              <TopList />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </>
   );
 }
 
