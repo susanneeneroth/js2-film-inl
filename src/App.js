@@ -5,6 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import TopList from './pages/TopList';
+import LatestMovies from './pages/LatestMovies';
+import FilmPage from './pages/FilmPage';
+import Action from './pages/Action';
+import Comedy from './pages/Comedy';
 
 function App() {
   return (
@@ -17,8 +21,24 @@ function App() {
               <HomePage />
             </Route>
 
-            <Route exact path='/TopList'>
+            <Route path='/LatestMovies'>
+              <LatestMovies />
+            </Route>
+
+            <Route path='/TopList'>
               <TopList />
+            </Route>
+
+            <Route path='/FilmPage'>
+              <FilmPage />
+            </Route>
+
+            <Route path='/Action'>
+              <Action />
+            </Route>
+
+            <Route path='/Comedy'>
+              <Comedy />
             </Route>
           </Switch>
         </div>

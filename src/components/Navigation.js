@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 
-function Navigation() {
+const Navigation = () => {
   return (
     <Navbar bg='dark' variant='dark' expand='md'>
       <Container>
@@ -15,12 +15,18 @@ function Navigation() {
 
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link href='/'>Home</Nav.Link>
-            <Nav.Link href='/TopList'>Top List</Nav.Link>
+          <Nav className='ms-auto'>
+            <NavLink to='/LatestMovies' className='nav-link'>
+              Latest
+            </NavLink>
+            <NavLink to='/TopList' className='nav-link' variant='dark'>
+              Top List
+            </NavLink>
             <NavDropdown title='Genres' id='basic-nav-dropdown'>
-              <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.2'>Comedy</NavDropdown.Item>
+              <NavLink to='/Action' className='nav-link'>
+                Action
+              </NavLink>
+              <NavLink to='/Comedy'>Comedy</NavLink>
               <NavDropdown.Item href='#action/3.3'>Sci-Fi</NavDropdown.Item>
             </NavDropdown>
           </Nav>
@@ -28,6 +34,6 @@ function Navigation() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default Navigation;
