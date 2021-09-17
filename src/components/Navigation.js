@@ -23,11 +23,15 @@ const Navigation = () => {
               Top List
             </NavLink>
             <NavDropdown title='Genres' id='basic-nav-dropdown'>
-              <NavLink to='/Action' className='nav-link'>
+              <NavDropdown.Item as={Link} to='/Action'>
                 Action
-              </NavLink>
-              <NavLink to='/Comedy'>Comedy</NavLink>
-              <NavDropdown.Item href='#action/3.3'>Sci-Fi</NavDropdown.Item>
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/Comedy'>
+                Comedy
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/SciFi'>
+                Sci-Fi
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

@@ -15,5 +15,9 @@ code {
 h1 {
   color: rgb(148, 7, 7);
   padding-top: 20px;
+  text-align: center;
 }
 
+.nav-link-drop {
+  color: pink;
+}

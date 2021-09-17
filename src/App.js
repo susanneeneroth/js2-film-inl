@@ -9,13 +9,14 @@ import LatestMovies from './pages/LatestMovies';
 import FilmPage from './pages/FilmPage';
 import Action from './pages/Action';
 import Comedy from './pages/Comedy';
+import SciFi from './pages/SciFi';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <BrowserRouter>
         <Navigation />
-        <div className='App'>
+        <div>
           <Switch>
             <Route exact path='/'>
               <HomePage />
@@ -40,10 +41,14 @@ function App() {
             <Route path='/Comedy'>
               <Comedy />
             </Route>
+
+            <Route path='/SciFi'>
+              <SciFi />
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
