@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import TopList from './pages/TopList';
-import LatestMovies from './pages/LatestMovies';
-import FilmPage from './pages/FilmPage';
+import PopularMovies from './components/PopularMovies';
 import Action from './pages/Action';
 import Comedy from './pages/Comedy';
 import SciFi from './pages/SciFi';
@@ -23,15 +22,11 @@ function App() {
             </Route>
 
             <Route path='/LatestMovies'>
-              <LatestMovies />
+              <PopularMovies />
             </Route>
 
             <Route path='/TopList'>
               <TopList />
-            </Route>
-
-            <Route path='/FilmPage'>
-              <FilmPage />
             </Route>
 
             <Route path='/Action'>
