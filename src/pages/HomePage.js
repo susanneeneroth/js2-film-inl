@@ -18,20 +18,7 @@ function HomePage() {
   //   });
   // }, [setData]);
 
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <div className='grid'>
-          {/* {data.map((movie) => (
-            <div className='item' key={movie.id}>
-              <img src={getImage(movie.poster_path)} alt='movie' />
-              <p>{movie.original_title}</p>
-            </div>
-          ))} */}
-        </div>
-      </header>
-    </div>
-  );
+  return <div className='App'>Homepage</div>;
 }
 
 export default HomePage;

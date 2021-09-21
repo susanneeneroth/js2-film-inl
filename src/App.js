@@ -10,12 +10,14 @@ import LatestMovie from './components/LatestMovie';
 import Action from './pages/Action';
 import Comedy from './pages/Comedy';
 import SciFi from './pages/SciFi';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
         <Navigation />
+        <Header />
         <div>
           <Switch>
             <Route exact path='/'>
@@ -48,6 +50,7 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
+      <div className='main'></div>
     </div>
   );
 }
