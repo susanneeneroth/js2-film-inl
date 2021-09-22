@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useQuery } from 'react-query';
-import TopListMovie from './TopListMovie';
+import TopListMovieCard from './TopListMovieCard';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const api_key = `?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
@@ -14,25 +15,36 @@ const fetchMovies = async () => {
 
 const TopList = () => {
   const { data, status } = useQuery('toprated', fetchMovies);
-  console.log(data);
+  // const [currentPage, setCurrentPage] = useState();
+  // console.log(data);
 
   return (
-    <div className='container-fluid'>
+    <Container>
       <h2>Top Rated movies</h2>
-      {/* <p>{status}</p> */}
+      <Button className='mt-20 mr-5' variant='dark'>
+        Page 1
+      </Button>
+      <Button className='mt-20 mr-5' variant='dark'>
+        Page 2
+      </Button>
+      <Button className='mt-20 mr-5' variant='dark'>
+        Page 3
+      </Button>
 
       {status === 'loading' && <div>Loading...</div>}
 
       {status === 'error' && <div>Error fetching data</div>}
 
       {status === 'success' && (
-        <Card style={{ width: '18rem' }}>
-          {data.results.map((movie) => (
-            <TopListMovie key={movie.id} movie={movie} />
+        <Row>
+          {data.results.map((movie, id) => (
+            <Col lg={3} md={4} sm={6} key={id}>
+              <TopListMovieCard key={movie.id} movie={movie} />
+            </Col>
           ))}
-        </Card>
+        </Row>
       )}
-    </div>
+    </Container>
   );
 };
 
