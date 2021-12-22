@@ -20,8 +20,15 @@ export const getLatest = async () => {
   return get(`/movie/latest${api_key}&language=en-US&include_adult=false`);
 };
 
-export default {
+export const getGenres = async () => {
+  return get(`genre/movie/list${api_key}&language=en-US`);
+};
+
+const apiQuery = {
   getTopList,
   getPopular,
   getLatest,
+  getGenres,
 };
+
+export default apiQuery;

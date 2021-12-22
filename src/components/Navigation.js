@@ -16,16 +16,22 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
-            <NavLink to='/LatestMovie' className='nav-link'>
+            <NavLink exact path to='/' className='nav-link' variant='dark'>
+              Home
+            </NavLink>
+            <NavLink to='/LatestMovie' className='nav-link' variant='dark'>
               Latest
             </NavLink>
             <NavLink to='/PopularMovies' className='nav-link'>
               Popular
             </NavLink>
             <NavLink to='/TopList' className='nav-link' variant='dark'>
-              Top List
+              Toplist
             </NavLink>
-            <NavDropdown title='Genres' id='basic-nav-dropdown'>
+            <NavLink to='/Genres' className='nav-link' variant='dark'>
+              Genres
+            </NavLink>
+            {/* <NavDropdown title='Genres' id='basic-nav-dropdown'>
               <NavDropdown.Item as={Link} to='/Action'>
                 Action
               </NavDropdown.Item>
@@ -35,7 +41,7 @@ const Navigation = () => {
               <NavDropdown.Item as={Link} to='/SciFi'>
                 Sci-Fi
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

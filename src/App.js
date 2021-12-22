@@ -12,6 +12,7 @@ import Action from './pages/Action';
 import Comedy from './pages/Comedy';
 import SciFi from './pages/SciFi';
 import Header from './components/Header';
+import Genres from './pages/Genres';
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,10 @@ function App() {
 
                 <Route path='/TopList'>
                   <TopList />
+                </Route>
+
+                <Route path='/Genres'>
+                  <Genres />
                 </Route>
 
                 <Route path='/Action'>

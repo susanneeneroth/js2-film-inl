@@ -3,7 +3,8 @@ import { Card } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { getLatest } from '../services/TMDBApi';
 
-const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
+const getImage = (poster_path) =>
+  `https://image.tmdb.org/t/p/w300/${poster_path}`;
 
 const LatestMovies = () => {
   const [latestMovie, setLatestMovie] = useState();
@@ -26,9 +27,8 @@ const LatestMovies = () => {
       {data && status === 'success' && (
         <Card bg='dark' text='white' className='mt-20'>
           <div className='flex-center'>
-            <Card.Img src={getImage(data.poster_path)} alt='movie image' />
+            <Card.Img src={getImage(data.poster_path)} alt='movie poster' />
             <Card.Header>{data.original_title}</Card.Header>
-
             <Card.Text className='pd-20'>{data.overview}</Card.Text>
           </div>
         </Card>

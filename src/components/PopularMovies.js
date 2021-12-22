@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
-import PopularMovieCard from './PopularMovieCard';
+import MovieCard from './MovieCard';
 import { getPopular } from '../services/TMDBApi';
 
 const PopularMovies = () => {
@@ -17,7 +17,7 @@ const PopularMovies = () => {
 
   return (
     <Container>
-      <h2>The 20 most popular movies</h2>
+      <h2>Popular movies</h2>
       {/* <Button
         className='mt-20 mr-5'
         variant='dark'
@@ -46,9 +46,9 @@ const PopularMovies = () => {
 
       {data && status === 'success' && (
         <Row>
-          {data.results.map((movie, id) => (
+          {data.results.slice(0, 10).map((movie, id) => (
             <Col lg={3} md={4} sm={6} key={id}>
-              <PopularMovieCard key={movie.id} movie={movie} />
+              <MovieCard key={movie.id} movie={movie} />
             </Col>
           ))}
         </Row>

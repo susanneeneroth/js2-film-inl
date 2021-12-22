@@ -2,9 +2,10 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
-const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
+const getImage = (poster_path) =>
+  `https://image.tmdb.org/t/p/w300/${poster_path}`;
 
-const TopListMovieCard = ({ movie }) => {
+const MovieCard = ({ movie }) => {
   return (
     <Card bg='dark' text='white' style={{ width: '18rem' }} className='mt-40'>
       <Card.Header className='card_header'>{movie.original_title}</Card.Header>
@@ -19,4 +20,4 @@ const TopListMovieCard = ({ movie }) => {
   );
 };
 
-export default TopListMovieCard;
+export default MovieCard;
