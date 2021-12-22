@@ -1,4 +1,5 @@
 import React from 'react';
+import LatestMovie from '../components/LatestMovie';
 // import axios from 'axios';
 
 // const api_key = '435c8880fa41fdbe5fba133c47f78d2b';

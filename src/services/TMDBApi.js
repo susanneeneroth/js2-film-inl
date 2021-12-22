@@ -32,4 +32,5 @@ export const getPopular = async (page = null) => {
 
 export default {
   getTopRated,
+  getPopular,
 };

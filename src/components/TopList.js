@@ -20,8 +20,8 @@ const TopList = () => {
 
   return (
     <Container>
-      <h2>Top Rated movies</h2>
-      <Button className='mt-20 mr-5' variant='dark'>
+      <h2>Top List</h2>
+      {/* <Button className='mt-20 mr-5' variant='dark'>
         Page 1
       </Button>
       <Button className='mt-20 mr-5' variant='dark'>
@@ -29,7 +29,7 @@ const TopList = () => {
       </Button>
       <Button className='mt-20 mr-5' variant='dark'>
         Page 3
-      </Button>
+      </Button> */}
 
       {status === 'loading' && <div>Loading...</div>}
 

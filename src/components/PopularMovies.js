@@ -3,22 +3,25 @@ import { Button, Row, Col } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import PopularMovieCard from './PopularMovieCard';
+import { getPopular } from '../services/TMDBApi';
 
-const BASE_URL = 'https://api.themoviedb.org/3';
-const api_key = `?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
+// const BASE_URL = 'https://api.themoviedb.org/3';
+// const api_key = `?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
 // const currentPage = 3;
 
-const fetchMovies = async (key, currentPage) => {
-  const res = await fetch(
-    `${BASE_URL}/movie/popular${api_key}&page=${currentPage}`
-  );
+// const fetchMovies = async (key, currentPage) => {
+//   const res = await fetch(
+//     `${BASE_URL}/movie/popular${api_key}&page=${currentPage}`
+//   );
 
-  return res.json();
-};
+//   return res.json();
+// };
 
 const PopularMovies = () => {
-  const [currentPage, setCurrentPage] = useState();
-  const { data, status } = useQuery(['movies', currentPage], fetchMovies);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data, status } = useQuery(['movies', currentPage], () => {
+    return getPopular(currentPage);
+  });
 
   console.log(data);
 
@@ -61,6 +64,27 @@ const PopularMovies = () => {
           ))}
         </Row>
       )}
+      <Button
+        className='mt-20 mr-5'
+        variant='dark'
+        onClick={() => setCurrentPage(1)}
+      >
+        Page 1
+      </Button>
+      <Button
+        className='mt-20 mr-5'
+        variant='dark'
+        onClick={() => setCurrentPage(2)}
+      >
+        Page 2
+      </Button>
+      <Button
+        className='mt-20 mr-5'
+        variant='dark'
+        onClick={() => setCurrentPage(3)}
+      >
+        Page 3
+      </Button>
     </Container>
   );
 };
