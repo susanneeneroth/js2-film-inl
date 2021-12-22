@@ -1,5 +1,7 @@
 import React from 'react';
 import LatestMovie from '../components/LatestMovie';
+// import PopularMovies from '../components/PopularMovies';
+import TopList from '../components/TopList';
 // import axios from 'axios';
 
 // const api_key = '435c8880fa41fdbe5fba133c47f78d2b';
@@ -19,7 +21,13 @@ function HomePage() {
   //   });
   // }, [setData]);
 
-  return <div className='App'>Homepage</div>;
+  return (
+    <div className='App'>
+      <LatestMovie />
+      <TopList />
+      {/* <PopularMovies /> */}
+    </div>
+  );
 }
 
 export default HomePage;

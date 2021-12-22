@@ -5,31 +5,20 @@ import { useQuery } from 'react-query';
 import PopularMovieCard from './PopularMovieCard';
 import { getPopular } from '../services/TMDBApi';
 
-// const BASE_URL = 'https://api.themoviedb.org/3';
-// const api_key = `?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
-// const currentPage = 3;
-
-// const fetchMovies = async (key, currentPage) => {
-//   const res = await fetch(
-//     `${BASE_URL}/movie/popular${api_key}&page=${currentPage}`
-//   );
-
-//   return res.json();
-// };
-
 const PopularMovies = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const { data, status } = useQuery(['movies', currentPage], () => {
-    return getPopular(currentPage);
-  });
-
-  console.log(data);
+  const [popularMovie, setPopularMovie] = useState();
+  const { data, isError, isLoading, status } = useQuery(
+    ['popularMovie', popularMovie],
+    () => {
+      setPopularMovie(popularMovie);
+      return getPopular(popularMovie);
+    }
+  );
 
   return (
     <Container>
       <h2>The 20 most popular movies</h2>
-      {/* <p>{status}</p> */}
-      <Button
+      {/* <Button
         className='mt-20 mr-5'
         variant='dark'
         onClick={() => setCurrentPage(1)}
@@ -49,13 +38,13 @@ const PopularMovies = () => {
         onClick={() => setCurrentPage(3)}
       >
         Page 3
-      </Button>
+      </Button> */}
 
-      {status === 'loading' && <div>Loading...</div>}
+      {isLoading === 'loading' && <div>Loading...</div>}
 
-      {status === 'error' && <div>Error fetching data</div>}
+      {isError === 'error' && <div>Error fetching data</div>}
 
-      {status === 'success' && (
+      {data && status === 'success' && (
         <Row>
           {data.results.map((movie, id) => (
             <Col lg={3} md={4} sm={6} key={id}>
@@ -64,7 +53,7 @@ const PopularMovies = () => {
           ))}
         </Row>
       )}
-      <Button
+      {/* <Button
         className='mt-20 mr-5'
         variant='dark'
         onClick={() => setCurrentPage(1)}
@@ -84,7 +73,7 @@ const PopularMovies = () => {
         onClick={() => setCurrentPage(3)}
       >
         Page 3
-      </Button>
+      </Button> */}
     </Container>
   );
 };

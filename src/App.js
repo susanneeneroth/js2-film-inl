@@ -55,6 +55,7 @@ function App() {
               </Switch>
             </div>
           </BrowserRouter>
+          <div className='main'></div>
         </div>
       </QueryClientProvider>
     </>
