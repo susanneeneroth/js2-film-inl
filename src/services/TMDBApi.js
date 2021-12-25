@@ -30,7 +30,7 @@ export const getMoviesWithGenres = async (genreId, page) => {
   );
 };
 
-export const getMovieDetails = async (id) => {
+export const getMovieFacts = async (id) => {
   return get(`movie/${id}${api_key}&language=en-US`);
 };
 
@@ -44,7 +44,7 @@ const apiQuery = {
   getLatest,
   getMovieGenres,
   getMoviesWithGenres,
-  getMovieDetails,
+  getMovieFacts,
   getMovieCredits,
 };
 

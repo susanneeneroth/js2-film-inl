@@ -13,7 +13,7 @@ import Comedy from './pages/Comedy';
 import SciFi from './pages/SciFi';
 import Header from './components/Header';
 import Genres from './pages/Genres';
-import GenreMoviesPage from './pages/GenreMoviesPage';
+import MovieFacts from './pages/MovieFacts';
 
 const queryClient = new QueryClient();
 
@@ -59,8 +59,8 @@ function App() {
                   <SciFi />
                 </Route>
 
-                <Route path='/GenreMoviesPage'>
-                  <GenreMoviesPage />
+                <Route path='/movie/:id'>
+                  <MovieFacts />
                 </Route>
               </Switch>
             </div>

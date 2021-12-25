@@ -1,0 +1,14 @@
+.movie-facts-poster {
+  margin: 20px;
+}
+
+.movie-facts-text {
+  color: #ffffff;
+  width: 50%;
+  margin: auto;
+}
+
+.movie-facts-img {
+  width: 100px;
+  margin: 5px;
+}

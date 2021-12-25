@@ -27,7 +27,13 @@ const LatestMovies = () => {
       {data && status === 'success' && (
         <Card bg='dark' text='white' className='mt-20'>
           <div className='flex-center'>
-            <Card.Img src={getImage(data.poster_path)} alt='movie poster' />
+            <Card.Img
+              src={getImage(data.poster_path)}
+              alt={
+                (!data.poster_path && 'image missing') ||
+                (data.poster_path && 'movie poster')
+              } // för att jag tröttnade på null bilder för Latest
+            />
             <Card.Header>{data.original_title}</Card.Header>
             <Card.Text className='pd-20'>{data.overview}</Card.Text>
           </div>
