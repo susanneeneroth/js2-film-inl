@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { getLatest } from '../services/TMDBApi';
+import '../css/App.css';
 
 const getImage = (poster_path) =>
   `https://image.tmdb.org/t/p/w300/${poster_path}`;
@@ -17,7 +18,7 @@ const LatestMovies = () => {
   );
 
   return (
-    <div className='single-container'>
+    <div className='container-latest'>
       <h2>Latest Movie</h2>
 
       {isLoading === 'loading' && <div>Loading...</div>}

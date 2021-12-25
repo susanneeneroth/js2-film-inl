@@ -125,3 +125,15 @@ h2 {
   width: 50%;
   margin: 50px auto 0px auto;
 }
+
+.container-center {
+  max-width: 80vw;
+  margin: auto;
+  background-color: pink;
+}
+
+.container-latest {
+  max-height: 200px;
+  max-width: 60vw;
+  margin: auto;
+}

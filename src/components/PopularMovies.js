@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import MovieCard from './MovieCard';
 import { getPopular } from '../services/TMDBApi';
+import '../css/App.css';
 
 const PopularMovies = () => {
   const [popularMovie, setPopularMovie] = useState();
@@ -16,7 +16,7 @@ const PopularMovies = () => {
   );
 
   return (
-    <Container>
+    <section className='container-center'>
       <h2>Popular movies</h2>
       {/* <Button
         className='mt-20 mr-5'
@@ -74,7 +74,7 @@ const PopularMovies = () => {
       >
         Page 3
       </Button> */}
-    </Container>
+    </section>
   );
 };
 
