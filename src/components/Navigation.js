@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 
 const Navigation = () => {
@@ -31,17 +30,6 @@ const Navigation = () => {
             <NavLink to='/Genres' className='nav-link' variant='dark'>
               Genres
             </NavLink>
-            {/* <NavDropdown title='Genres' id='basic-nav-dropdown'>
-              <NavDropdown.Item as={Link} to='/Action'>
-                Action
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to='/Comedy'>
-                Comedy
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to='/SciFi'>
-                Sci-Fi
-              </NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

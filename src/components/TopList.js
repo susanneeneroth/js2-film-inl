@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import MovieCard from './MovieCard';
 import { getTopList } from '../services/TMDBApi';

@@ -1,30 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from 'react-query';
-// import { ReactQueryDevtools } from 'react-query/devtools';
-import './css/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      staleTime: 0, // 1000 * 10 = 10 seconds
-      cacheTime: 10,
-    },
-  },
-});
 
 ReactDOM.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <App />
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-      </BrowserRouter>
-    </QueryClientProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

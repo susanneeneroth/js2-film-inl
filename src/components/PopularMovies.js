@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import MovieCard from './MovieCard';

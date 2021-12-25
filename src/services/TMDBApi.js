@@ -26,14 +26,16 @@ export const getMovieGenres = async () => {
 
 export const getMoviesWithGenres = async (genreId, page) => {
   return get(
-    `discover/movie?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US&page=${page}&with_genres=${genreId}`
+    `https://api.themoviedb.org/3/discover/movie?api_key=7673fbec2310e113e97235da3faeeb11&language=en-US&page=${page}&with_genres=${genreId}`
   );
 };
 
 export const getMovieDetails = async (id) => {
-  return get(
-    `movie/${id}?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US`
-  );
+  return get(`movie/${id}${api_key}&language=en-US`);
+};
+
+export const getMovieCredits = async (movie_id) => {
+  return get(`movie/${movie_id}/credits${api_key}&language=en-US`);
 };
 
 const apiQuery = {
@@ -43,6 +45,7 @@ const apiQuery = {
   getMovieGenres,
   getMoviesWithGenres,
   getMovieDetails,
+  getMovieCredits,
 };
 
 export default apiQuery;

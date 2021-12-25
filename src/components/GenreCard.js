@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const getImage = (poster_path) =>
   `https://image.tmdb.org/t/p/w300/${poster_path}`;
 
-const MovieCard = ({ movie }) => {
+const GenreCard = ({ movie }) => {
   return (
     <Card bg='dark' text='white' style={{ width: '18rem' }} className='mt-40'>
       <Card.Header className='card_header'>{movie.original_title}</Card.Header>
@@ -22,4 +22,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default GenreCard;

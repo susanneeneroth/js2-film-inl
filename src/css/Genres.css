@@ -1,0 +1,18 @@
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.btn-margin {
+  margin: 5px;
+}
+
+.genre-hr {
+  color: #fff;
+  width: 50%;
+  margin: 10px auto 50px auto;
+}

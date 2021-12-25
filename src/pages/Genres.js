@@ -3,7 +3,8 @@ import { useQuery } from 'react-query';
 import { useHistory, useParams } from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap';
 import { getMovieGenres } from '../services/TMDBApi';
-import FilteredMovies from '../components/FilteredMovies';
+import '../css/Genres.css';
+import GenreMovies from '../components/GenreMovies';
 
 const Genres = () => {
   let { genreId, genreName, genrePage } = useParams();
@@ -36,16 +37,18 @@ const Genres = () => {
       {isError === 'error' && <div>Error fetching data</div>}
       {movieGenresData && status === 'success' && (
         <>
-          <div>
+          <div className='btn-container'>
             {movieGenresData.genres.map((genre, i) => (
               <div key={i} onClick={() => handleBtnClick(genre)}>
-                <Button variant='outline-secondary'>{genre.name}</Button>
+                <Button variant='outline-secondary' className='btn-margin'>
+                  {genre.name}
+                </Button>
               </div>
             ))}
           </div>
-          <hr className='hr-color'></hr>
+          <hr className='genre-hr'></hr>
           {selectedGenre && (
-            <FilteredMovies
+            <GenreMovies
               genreId={genreId}
               genreName={genreName}
               genrePage={genrePage}

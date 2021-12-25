@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -13,6 +13,7 @@ import Comedy from './pages/Comedy';
 import SciFi from './pages/SciFi';
 import Header from './components/Header';
 import Genres from './pages/Genres';
+import GenreMoviesPage from './pages/GenreMoviesPage';
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <div className='App'>
-          <BrowserRouter>
+          <Router>
             <Navigation />
             <Header />
             <div>
@@ -57,9 +58,13 @@ function App() {
                 <Route path='/SciFi'>
                   <SciFi />
                 </Route>
+
+                <Route path='/GenreMoviesPage'>
+                  <GenreMoviesPage />
+                </Route>
               </Switch>
             </div>
-          </BrowserRouter>
+          </Router>
           <div className='main'></div>
         </div>
       </QueryClientProvider>
