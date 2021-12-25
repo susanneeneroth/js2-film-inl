@@ -20,15 +20,29 @@ export const getLatest = async () => {
   return get(`/movie/latest${api_key}&language=en-US&include_adult=false`);
 };
 
-export const getGenres = async () => {
+export const getMovieGenres = async () => {
   return get(`genre/movie/list${api_key}&language=en-US`);
+};
+
+export const getMoviesWithGenres = async (genreId, page) => {
+  return get(
+    `discover/movie?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US&page=${page}&with_genres=${genreId}`
+  );
+};
+
+export const getMovieDetails = async (id) => {
+  return get(
+    `movie/${id}?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US`
+  );
 };
 
 const apiQuery = {
   getTopList,
   getPopular,
   getLatest,
-  getGenres,
+  getMovieGenres,
+  getMoviesWithGenres,
+  getMovieDetails,
 };
 
 export default apiQuery;

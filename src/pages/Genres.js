@@ -1,29 +1,56 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useHistory, useParams } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
-import { getGenres } from '../services/TMDBApi';
+import { Container, Button } from 'react-bootstrap';
+import { getMovieGenres } from '../services/TMDBApi';
+import FilteredMovies from '../components/FilteredMovies';
 
 const Genres = () => {
-  // börja här
+  let { genreId, genreName, genrePage } = useParams();
 
-  const [genres, setGenres] = useState();
-  const { data, isError, isLoading, status } = useQuery(
-    ['genres', genres],
-    () => {
-      setGenres(genres);
-      return getGenres(genres);
-    }
-  );
+  const [selectedGenre, setSelectedGenre] = useState({
+    id: genreId,
+  });
+
+  const {
+    data: movieGenresData,
+    isError,
+    isLoading,
+    status,
+  } = useQuery(['genres', selectedGenre], () => {
+    return getMovieGenres(selectedGenre);
+  });
+
+  let history = useHistory();
+
+  const handleBtnClick = async (genre) => {
+    setSelectedGenre(genre);
+    history.push(`/movies/${genre.name}/${genre.id}/1`);
+  };
 
   return (
     <Container>
       <h2>Genres</h2>
-      {isLoading && <p>Loading genres...</p>}
-      {isError && <p>There was an error fetching data.</p>}
-      {data && status === 'success' && (
+
+      {isLoading === 'loading' && <div>Loading...</div>}
+      {isError === 'error' && <div>Error fetching data</div>}
+      {movieGenresData && status === 'success' && (
         <>
-          <Row>data här</Row>
+          <div>
+            {movieGenresData.genres.map((genre, i) => (
+              <div key={i} onClick={() => handleBtnClick(genre)}>
+                <Button variant='outline-secondary'>{genre.name}</Button>
+              </div>
+            ))}
+          </div>
+          <hr className='hr-color'></hr>
+          {selectedGenre && (
+            <FilteredMovies
+              genreId={genreId}
+              genreName={genreName}
+              genrePage={genrePage}
+            />
+          )}
         </>
       )}
     </Container>
