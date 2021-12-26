@@ -8,12 +8,10 @@ import HomePage from './pages/HomePage';
 import TopList from './components/TopList';
 import PopularMovies from './components/PopularMovies';
 import LatestMovie from './components/LatestMovie';
-import Action from './pages/Action';
-import Comedy from './pages/Comedy';
-import SciFi from './pages/SciFi';
 import Header from './components/Header';
 import Genres from './pages/Genres';
 import MovieFacts from './pages/MovieFacts';
+import GenreMovies from './components/GenreMovies';
 
 const queryClient = new QueryClient();
 
@@ -47,20 +45,12 @@ function App() {
                   <Genres />
                 </Route>
 
-                <Route path='/Action'>
-                  <Action />
-                </Route>
-
-                <Route path='/Comedy'>
-                  <Comedy />
-                </Route>
-
-                <Route path='/SciFi'>
-                  <SciFi />
-                </Route>
-
                 <Route path='/movie/:id'>
                   <MovieFacts />
+                </Route>
+
+                <Route path='/movies/:genreName?/:genreId?/:genrePage?'>
+                  <GenreMovies />
                 </Route>
               </Switch>
             </div>

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { getLatest } from '../services/TMDBApi';
 import '../css/App.css';
 
 const getImage = (poster_path) =>
-  `https://image.tmdb.org/t/p/w300/${poster_path}`;
+  `https://image.tmdb.org/t/p/w500/${poster_path}`;
 
 const LatestMovies = () => {
   const [latestMovie, setLatestMovie] = useState();
@@ -18,7 +18,7 @@ const LatestMovies = () => {
   );
 
   return (
-    <div className='container-latest'>
+    <Container>
       <h2>Latest Movie</h2>
 
       {isLoading === 'loading' && <div>Loading...</div>}
@@ -30,17 +30,15 @@ const LatestMovies = () => {
           <div className='flex-center'>
             <Card.Img
               src={getImage(data.poster_path)}
-              alt={
-                (!data.poster_path && 'image missing') ||
-                (data.poster_path && 'movie poster')
-              } // för att jag tröttnade på null bilder för Latest
+              alt='movie poster'
+              className='latest-img'
             />
             <Card.Header>{data.original_title}</Card.Header>
             <Card.Text className='pd-20'>{data.overview}</Card.Text>
           </div>
         </Card>
       )}
-    </div>
+    </Container>
   );
 };
 

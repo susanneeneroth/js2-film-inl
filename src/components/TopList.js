@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import '../css/App.css';
 import { useQuery } from 'react-query';
 import MovieCard from './MovieCard';
@@ -16,7 +16,7 @@ const TopList = () => {
   );
 
   return (
-    <section className='container-center'>
+    <Container>
       <h2>Toplist</h2>
 
       {isLoading && <p>Loading top list...</p>}
@@ -32,7 +32,7 @@ const TopList = () => {
           </Row>
         </>
       )}
-    </section>
+    </Container>
   );
 };
 

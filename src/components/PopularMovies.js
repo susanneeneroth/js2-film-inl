@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import MovieCard from './MovieCard';
 import { getPopular } from '../services/TMDBApi';
@@ -16,7 +16,7 @@ const PopularMovies = () => {
   );
 
   return (
-    <section className='container-center'>
+    <Container>
       <h2>Popular movies</h2>
       {/* <Button
         className='mt-20 mr-5'
@@ -46,7 +46,7 @@ const PopularMovies = () => {
 
       {data && status === 'success' && (
         <Row>
-          {data.results.slice(0, 10).map((movie, id) => (
+          {data.results.slice(0, 8).map((movie, id) => (
             <Col lg={3} md={4} sm={6} key={id}>
               <MovieCard key={movie.id} movie={movie} />
             </Col>
@@ -74,7 +74,7 @@ const PopularMovies = () => {
       >
         Page 3
       </Button> */}
-    </section>
+    </Container>
   );
 };
 

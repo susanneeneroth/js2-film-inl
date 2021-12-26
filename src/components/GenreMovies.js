@@ -1,3 +1,5 @@
+//sida som ska visa filmer från en specifik genre
+
 import React from 'react';
 import { useHistory } from 'react-router';
 import { getMoviesWithGenres } from '../services/TMDBApi';
@@ -5,6 +7,7 @@ import { useQuery } from 'react-query';
 import { Button } from 'react-bootstrap';
 import '../css/GenreMovies.css';
 import GenreCard from './GenreCard';
+// import MovieCard from './MovieCard';
 
 const GenreMovies = ({ genreId, genreName, genrePage }) => {
   let page = parseInt(genrePage);

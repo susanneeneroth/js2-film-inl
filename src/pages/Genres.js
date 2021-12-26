@@ -1,10 +1,12 @@
+//sida med genreknappar
+
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useHistory, useParams } from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap';
 import { getMovieGenres } from '../services/TMDBApi';
 import '../css/Genres.css';
-import GenreMovies from '../components/GenreMovies';
+// import GenreMovies from '../components/GenreMovies';
 
 const Genres = () => {
   let { genreId, genreName, genrePage } = useParams();
@@ -46,14 +48,14 @@ const Genres = () => {
               </div>
             ))}
           </div>
-          <hr className='genre-hr'></hr>
+          {/* <hr className='genre-hr'></hr>
           {selectedGenre && (
             <GenreMovies
               genreId={genreId}
               genreName={genreName}
               genrePage={genrePage}
             />
-          )}
+          )} */}
         </>
       )}
     </Container>

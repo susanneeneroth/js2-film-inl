@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+// import GenreMovies from './GenreMovies';
 
 const getImage = (poster_path) =>
   `https://image.tmdb.org/t/p/w300/${poster_path}`;

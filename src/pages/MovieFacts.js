@@ -32,7 +32,7 @@ const MovieFacts = () => {
                   <img
                     src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                     className='movie-facts-img'
-                    alt={!actor.profile_path && 'no image'} // för att jag tröttnade på fula brutna bildlänkar
+                    alt='actor'
                   />
                   <p key={i}>{actor.name}</p>
                 </Link>
