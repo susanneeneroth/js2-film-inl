@@ -12,6 +12,7 @@ import Header from './components/Header';
 import Genres from './pages/Genres';
 import MovieFacts from './pages/MovieFacts';
 import GenreMovies from './components/GenreMovies';
+import ActorFacts from './pages/ActorFacts';
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,10 @@ function App() {
 
                 <Route path='/movies/:genreName?/:genreId?/:genrePage?'>
                   <GenreMovies />
+                </Route>
+
+                <Route path='/actor/:id'>
+                  <ActorFacts />
                 </Route>
               </Switch>
             </div>

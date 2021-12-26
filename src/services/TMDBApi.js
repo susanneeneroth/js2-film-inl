@@ -38,6 +38,18 @@ export const getMovieCredits = async (movie_id) => {
   return get(`movie/${movie_id}/credits${api_key}&language=en-US`);
 };
 
+export const getActorById = async (id) => {
+  return get(
+    `/person/${id}?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US`
+  );
+};
+
+export const getMovieActorById = async (id, page) => {
+  return get(
+    `discover/movie?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US&sort_by=popularity.desc&include_adult=false&page=${page}&with_cast=${id}`
+  );
+};
+
 const apiQuery = {
   getTopList,
   getPopular,
@@ -46,6 +58,7 @@ const apiQuery = {
   getMoviesWithGenres,
   getMovieFacts,
   getMovieCredits,
+  getActorById,
 };
 
 export default apiQuery;
