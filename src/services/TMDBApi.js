@@ -26,7 +26,7 @@ export const getMovieGenres = async () => {
 
 export const getMoviesWithGenres = async (genreId, page) => {
   return get(
-    `https://api.themoviedb.org/3/discover/movie?api_key=7673fbec2310e113e97235da3faeeb11&language=en-US&page=${page}&with_genres=${genreId}`
+    `https://api.themoviedb.org/3/discover/movie${api_key}&language=en-US&page=${page}&with_genres=${genreId}`
   );
 };
 
@@ -39,14 +39,12 @@ export const getMovieCredits = async (movie_id) => {
 };
 
 export const getActorById = async (id) => {
-  return get(
-    `/person/${id}?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US`
-  );
+  return get(`/person/${id}${api_key}&language=en-US`);
 };
 
 export const getMovieActorById = async (id, page) => {
   return get(
-    `discover/movie?api_key=c376ce2218893c14ecc81f3b497246ae&language=en-US&sort_by=popularity.desc&include_adult=false&page=${page}&with_cast=${id}`
+    `discover/movie${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&page=${page}&with_cast=${id}`
   );
 };
 

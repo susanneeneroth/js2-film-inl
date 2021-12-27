@@ -18,7 +18,7 @@ const MovieCard = ({ movie }) => {
           <Card.Img src={getImage(movie.poster_path)} alt='movie' />
           <Link to={`/movie/${movie.id}`}>
             <Button variant='secondary' className='mt-20'>
-              Read more about Movie
+              View details
             </Button>
           </Link>
         </Card.Body>

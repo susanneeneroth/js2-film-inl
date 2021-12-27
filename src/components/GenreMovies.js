@@ -7,9 +7,10 @@ import { useQuery } from 'react-query';
 import { Button } from 'react-bootstrap';
 import '../css/GenreMovies.css';
 import GenreCard from './GenreCard';
-// import MovieCard from './MovieCard';
+import { useParams } from 'react-router-dom';
 
-const GenreMovies = ({ genreId, genreName, genrePage }) => {
+const GenreMovies = () => {
+  const { genreId, genreName, genrePage } = useParams();
   let page = parseInt(genrePage);
   let history = useHistory();
 
@@ -31,9 +32,9 @@ const GenreMovies = ({ genreId, genreName, genrePage }) => {
     history.push(`/movies/${genreName}/${genreId}/${page - 1}`);
   };
 
-  console.log(data);
   return (
-    <section className='filteredMoviesSection'>
+    <section>
+      <h1>{genreName}</h1>
       {data && (
         <div className='filteredMoviesItems'>
           {data.results.map((movie, i) => (
