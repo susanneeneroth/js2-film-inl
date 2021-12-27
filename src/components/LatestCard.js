@@ -1,14 +1,14 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import '../css/LatestCard.css';
 
 const getImage = (poster_path) =>
   `https://image.tmdb.org/t/p/w300/${poster_path}`;
 
-const GenreCard = (props) => {
+const LatestCard = (props) => {
   return (
-    <>
+    <Container>
       <Card bg='dark' text='white' style={{ width: '18rem' }} className='mt-40'>
         <Card.Header className='card_header'>
           {props.original_title}
@@ -25,8 +25,8 @@ const GenreCard = (props) => {
           </Link>
         </Card.Body>
       </Card>
-    </>
+    </Container>
   );
 };
 
-export default GenreCard;
+export default LatestCard;

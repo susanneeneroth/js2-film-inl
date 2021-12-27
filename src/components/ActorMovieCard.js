@@ -7,14 +7,14 @@ import '../css/MovieCard.css';
 const getImage = (poster_path) =>
   `https://image.tmdb.org/t/p/w300/${poster_path}`;
 
-const MovieCard = ({ movie }) => {
+const ActorMovieCard = (props) => {
   return (
     <section className='movie-card'>
       <Card bg='dark' text='white' style={{ width: '18rem' }} className='mt-40'>
-        <Card.Header className='card_header'>{movie.title}</Card.Header>
+        <Card.Header className='card_header'>{props.title}</Card.Header>
         <Card.Body>
-          <Card.Img src={getImage(movie.poster_path)} alt='movie' />
-          <Link to={`/movie/${movie.id}`}>
+          <Card.Img src={getImage(props.poster_path)} alt='movie' />
+          <Link to={`/movie/${props.id}`}>
             <Button variant='secondary' className='mt-20'>
               View details
             </Button>
@@ -25,4 +25,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default ActorMovieCard;

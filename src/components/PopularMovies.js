@@ -18,27 +18,6 @@ const PopularMovies = () => {
   return (
     <Container>
       <h2>Popular movies</h2>
-      {/* <Button
-        className='mt-20 mr-5'
-        variant='dark'
-        onClick={() => setCurrentPage(1)}
-      >
-        Page 1
-      </Button>
-      <Button
-        className='mt-20 mr-5'
-        variant='dark'
-        onClick={() => setCurrentPage(2)}
-      >
-        Page 2
-      </Button>
-      <Button
-        className='mt-20 mr-5'
-        variant='dark'
-        onClick={() => setCurrentPage(3)}
-      >
-        Page 3
-      </Button> */}
 
       {isLoading === 'loading' && <div>Loading...</div>}
 
@@ -53,27 +32,6 @@ const PopularMovies = () => {
           ))}
         </Row>
       )}
-      {/* <Button
-        className='mt-20 mr-5'
-        variant='dark'
-        onClick={() => setCurrentPage(1)}
-      >
-        Page 1
-      </Button>
-      <Button
-        className='mt-20 mr-5'
-        variant='dark'
-        onClick={() => setCurrentPage(2)}
-      >
-        Page 2
-      </Button>
-      <Button
-        className='mt-20 mr-5'
-        variant='dark'
-        onClick={() => setCurrentPage(3)}
-      >
-        Page 3
-      </Button> */}
     </Container>
   );
 };

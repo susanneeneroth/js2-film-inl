@@ -17,7 +17,7 @@ export const getPopular = async () => {
 };
 
 export const getLatest = async () => {
-  return get(`/movie/latest${api_key}&language=en-US&include_adult=false`);
+  return get(`movie/now_playing${api_key}&language=en-US&page=1`);
 };
 
 export const getMovieGenres = async () => {
