@@ -18,9 +18,6 @@ const Navigation = () => {
             <NavLink exact path to='/' className='nav-link' variant='dark'>
               Home
             </NavLink>
-            <NavLink to='/LatestMovie' className='nav-link' variant='dark'>
-              Latest
-            </NavLink>
             <NavLink to='/PopularMovies' className='nav-link'>
               Popular
             </NavLink>

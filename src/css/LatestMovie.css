@@ -1,0 +1,12 @@
+.container-latest-movie {
+  margin: 0 auto;
+  max-width: 288px;
+}
+
+.container {
+  padding: 0px !important;
+}
+
+.carousel-indicators {
+  bottom: -50px;
+}

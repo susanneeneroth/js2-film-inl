@@ -25,7 +25,7 @@ const PopularMovies = () => {
 
       {data && status === 'success' && (
         <Row>
-          {data.results.slice(0, 8).map((movie, id) => (
+          {data.results.slice(0, 12).map((movie, id) => (
             <Col lg={3} md={4} sm={6} key={id}>
               <MovieCard key={movie.id} movie={movie} />
             </Col>

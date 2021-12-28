@@ -4,7 +4,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { getMoviesWithGenres } from '../services/TMDBApi';
 import { useQuery } from 'react-query';
-import { Button } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import '../css/GenreMovies.css';
 import GenreCard from './GenreCard';
 import { useParams } from 'react-router-dom';
@@ -34,14 +34,19 @@ const GenreMovies = () => {
 
   return (
     <section>
-      <h1>{genreName}</h1>
-      {data && (
-        <div className='filteredMoviesItems'>
-          {data.results.map((movie, i) => (
-            <GenreCard key={i} {...movie} />
-          ))}
-        </div>
-      )}
+      <Container>
+        <h1>{genreName}</h1>
+
+        {data && (
+          <Row>
+            {data.results.map((movie, i) => (
+              <Col lg={3} md={4} sm={6} key={i}>
+                <GenreCard key={i} {...movie} />
+              </Col>
+            ))}
+          </Row>
+        )}
+      </Container>
       <Button
         className='page-btn'
         variant='outline-secondary'

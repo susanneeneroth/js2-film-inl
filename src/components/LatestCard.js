@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../css/LatestCard.css';
 
 const getImage = (poster_path) =>
   `https://image.tmdb.org/t/p/w300/${poster_path}`;
