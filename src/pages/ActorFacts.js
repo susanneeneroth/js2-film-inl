@@ -5,6 +5,7 @@ import { getActorById } from '../services/TMDBApi';
 import { getMovieActorById } from '../services/TMDBApi';
 import ActorMovieCard from '../components/ActorMovieCard';
 import '../css/ActorFacts.css';
+import '../css/App.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const ActorFacts = () => {
@@ -18,8 +19,7 @@ const ActorFacts = () => {
     <section>
       {actorFacts.data && (
         <div>
-          <h2>{actorFacts.data.name}</h2>
-          <p>{actorFacts.data.place_of_birth}</p>
+          <h2 className='actor-facts-title'>{actorFacts.data.name}</h2>
           <img
             onError={(e) => {
               e.target.onerror = null;
@@ -31,6 +31,7 @@ const ActorFacts = () => {
           />
         </div>
       )}
+      <hr className='hr-color' />
       {actorMovie.data && (
         <Container>
           <h2>Cast in</h2>

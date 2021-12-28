@@ -27,7 +27,7 @@ const LatestMovies = () => {
 
       {data && status === 'success' && (
         <div className='container-latest-movie'>
-          <Carousel controls={false} interval={5000}>
+          <Carousel interval={4000}>
             {data.results.slice(0, 10).map((movie, i) => (
               <Carousel.Item key={movie.id}>
                 <LatestCard key={i} {...movie} />

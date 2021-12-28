@@ -10,3 +10,11 @@
 .carousel-indicators {
   bottom: -50px;
 }
+
+.carousel-control-prev{
+      left: -50px;
+}
+
+.carousel-control-next {
+  right: -50px;
+}

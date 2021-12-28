@@ -5,3 +5,7 @@ img {
 .actor-movies-container {
   display: flex;
 }
+
+.actor-facts-title {
+  margin-bottom: 30px !important;
+}

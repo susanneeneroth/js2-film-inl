@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import '../css/MovieFacts.css';
+import '../css/App.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const MovieFacts = () => {
@@ -24,10 +25,11 @@ const MovieFacts = () => {
             alt={movieFacts.data.title}
           />
           <p className='movie-facts-text'>{movieFacts.data.overview}</p>
+          <hr className='hr-color' />
 
           {movieCredits.data && (
             <Container>
-              <h2>Cast</h2>
+              <h2 className='movie-facts-cast'>Cast</h2>
               <Row>
                 {movieCredits.data.cast.map((actor, i) => (
                   <Col lg={2} md={2} sm={4}>

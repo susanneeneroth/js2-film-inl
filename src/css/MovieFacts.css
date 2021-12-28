@@ -2,6 +2,10 @@
   margin: 20px;
 }
 
+h2.movie-facts-cast {
+  margin-bottom: 30px !important;
+}
+
 .movie-facts-text {
   color: #ffffff;
   width: 50%;
@@ -12,3 +16,17 @@
   width: 100px;
   margin: 5px;
 }
+
+a:link {
+  color: rgb(160, 160, 160);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(160, 160, 160);
+}
+
+a:hover {
+  color: #ffffff;
+}
+
