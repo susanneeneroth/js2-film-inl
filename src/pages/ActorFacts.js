@@ -35,19 +35,21 @@ const ActorFacts = () => {
       {actorMovie.data && (
         <Container>
           <h2>Cast in</h2>
-          <Row>
-            {actorMovie.data.results.map((movie, i) => (
-              <Col lg={3} md={3} sm={6}>
-                <Link
-                  to={`/movie/${movie.id}`}
-                  key={i}
-                  className='actorMovieItem'
-                >
-                  <ActorMovieCard {...movie} className='actorMovieCard' />
-                </Link>
-              </Col>
-            ))}
-          </Row>
+          <div className='container-small'>
+            <Row>
+              {actorMovie.data.results.map((movie, i) => (
+                <Col lg={3} md={3} sm={6}>
+                  <Link
+                    to={`/movie/${movie.id}`}
+                    key={i}
+                    className='actorMovieItem'
+                  >
+                    <ActorMovieCard {...movie} className='actorMovieCard' />
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </div>
         </Container>
       )}
     </section>

@@ -4,7 +4,6 @@ import { useQuery } from 'react-query';
 import MovieCard from './MovieCard';
 import { getPopular } from '../services/TMDBApi';
 import '../css/App.css';
-import '../css/PopularMovies.css';
 
 const PopularMovies = () => {
   const [popularMovie, setPopularMovie] = useState();
@@ -25,7 +24,7 @@ const PopularMovies = () => {
       {isError === 'error' && <div>Error fetching data</div>}
 
       {data && status === 'success' && (
-        <div className='container-popular-res'>
+        <div className='container-small'>
           <Row>
             {data.results.slice(0, 12).map((movie, id) => (
               <Col lg={3} md={4} sm={6} key={id}>

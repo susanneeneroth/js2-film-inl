@@ -10,7 +10,7 @@ import GenreCard from './GenreCard';
 import { useParams } from 'react-router-dom';
 
 const GenreMovies = () => {
-  const { genreId, genreName, genrePage } = useParams();
+  const { genreId, genreName, genrePage } = useParams(); //För att kunna använda som Routes i App.js
   let page = parseInt(genrePage);
   let history = useHistory();
 
